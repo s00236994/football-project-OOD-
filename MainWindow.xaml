@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- LEFT: Teams -->
+            <!-- left: Teams -->
             <GroupBox Grid.Column="0" Header="Teams" Margin="0,0,10,0">
                 <StackPanel Margin="10">
 
@@ -49,7 +49,7 @@
                 </StackPanel>
             </GroupBox>
 
-            <!-- MIDDLE: Players -->
+            <!-- middle: Players -->
             <GroupBox Grid.Column="1" Header="Players" Margin="0,0,10,0">
                 <StackPanel Margin="10">
 

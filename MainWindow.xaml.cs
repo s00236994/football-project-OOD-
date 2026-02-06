@@ -20,6 +20,9 @@ namespace football_project
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Team> teams = new List<Team>();
+        private List<Player> players = new List<Player>();
+
         public MainWindow()
         {
             InitializeComponent();
