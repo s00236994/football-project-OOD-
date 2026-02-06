@@ -6,7 +6,106 @@
         xmlns:local="clr-namespace:football_project"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock x:Name="tblkHeader"
+                   Grid.Row="0"
+                   Text="Premier League Player Comparison"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,10"/>
+
+        <!-- Main layout -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- LEFT: Teams -->
+            <GroupBox Grid.Column="0" Header="Teams" Margin="0,0,10,0">
+                <StackPanel Margin="10">
+
+                    <ComboBox x:Name="cbxTeamFilter"
+                              Height="25"
+                              Margin="0,0,0,10">
+                        <ComboBoxItem Content="All Teams" IsSelected="True"/>
+                        <ComboBoxItem Content="Premier League"/>
+                    </ComboBox>
+
+                    <ListBox x:Name="lbxTeams" SelectionChanged="lbxTeams_SelectionChanged">
+                        <ListBoxItem Content="Leeds United"/>
+                        <ListBoxItem Content="Chelsea"/>
+                        <ListBoxItem Content="Manchester City"/>
+                    </ListBox>
+
+                </StackPanel>
+            </GroupBox>
+
+            <!-- MIDDLE: Players -->
+            <GroupBox Grid.Column="1" Header="Players" Margin="0,0,10,0">
+                <StackPanel Margin="10">
+
+                    <TextBox x:Name="tbxPlayerSearch"
+                             Height="25"
+                             Margin="0,0,0,10"
+                             Text="Select a team to view players"/>
+
+                    <ListBox x:Name="lbxPlayers">
+                        <ListBoxItem Content="(No players loaded)"/>
+                    </ListBox>
+
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Right side: Actions and Selected -->
+            <GroupBox Grid.Column="2" Header="Actions">
+                <StackPanel Margin="10">
+
+                    <Button x:Name="btnAddPlayer"
+                            Content="Add Player"
+                            Click="btnAddPlayer_Click"
+                            Height="30"
+                            Margin="0,0,0,10"/>
+
+                    <Button x:Name="btnAddRandomPlayer"
+                            Content="Add Random Player"
+                            Click="btnAddRandomPlayer_Click"
+                            Height="30"
+                            Margin="0,0,0,10"/>
+
+                    <Button x:Name="btnRemovePlayer"
+                            Content="Remove Player"
+                            Click="btnRemovePlayer_Click"
+                            Height="30"
+                            Margin="0,0,0,20"/>
+
+                    <TextBlock x:Name="tblkSelectedPlayers"
+                               Text="Selected Players"
+                               FontWeight="Bold"
+                               Margin="0,0,0,10"/>
+
+                    <ListBox x:Name="lbxSelectedPlayers" MinHeight="80" Margin="0,0,0,10">
+                        <ListBoxItem Content="(none)"/>
+                    </ListBox>
+
+                    <!--Compare the selected players -->
+                    <Button x:Name="btnCompare"
+                            Click="btnCompare_Click"
+                            Content="Compare"
+                            Height="30"
+                            Margin="0,10,0,0"/>
+
+                </StackPanel>
+            </GroupBox>
+
+        </Grid>
     </Grid>
 </Window>
