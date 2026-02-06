@@ -33,6 +33,7 @@ namespace football_project
 
         private void SetupTeams()
         {
+            // This method acts as a temporary data source until an API is used later
             //setup teams and populate them
             Team t1 = new Team("Leeds United");
             t1.AddPlayer(new Player("Ethan Ampadu", "MID", 4, "Leeds United"));
@@ -56,6 +57,7 @@ namespace football_project
         }
 
         //load teams to listbox
+        //clears existing items first to prevent duplication
         private void LoadTeamsToListBox()
         {
             lbxTeams.Items.Clear();
@@ -67,6 +69,7 @@ namespace football_project
             }
         }
 
+        //loads the selected teams players into the Players listbox
         private void lbxTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Team selectedTeam = lbxTeams.SelectedItem as Team;
@@ -86,6 +89,8 @@ namespace football_project
             }
         }
 
+        //adds the currently selected player to the selected players listbox
+        //prevents duplicate players from being added
         private void btnAddPlayer_Click(object sender, RoutedEventArgs e)
         {
             Player p = lbxPlayers.SelectedItem as Player;
@@ -105,6 +110,8 @@ namespace football_project
             
         }
 
+        //selects a random player from the currently selected team
+        //adds them to the selected players listbox
         private void btnAddRandomPlayer_Click(object sender, RoutedEventArgs e)
         {
             Team selectedTeam = lbxTeams.SelectedItem as Team;
@@ -132,6 +139,9 @@ namespace football_project
             lbxSelectedPlayers.Items.Add(randomPlayer);
         }
 
+
+        //removes the selected player from the selected players listbox
+
         private void btnRemovePlayer_Click(object sender, RoutedEventArgs e)
         {
             Player p = lbxSelectedPlayers.SelectedItem as Player;
@@ -144,6 +154,8 @@ namespace football_project
             lbxSelectedPlayers.Items.Remove(p);
         }
 
+        //displays a simple comparison summary of all selected players
+        //this is a placeholder for a future comparison window
         private void btnCompare_Click(object sender, RoutedEventArgs e)
         {
             if (lbxSelectedPlayers.Items.Count == 0)
@@ -161,6 +173,9 @@ namespace football_project
 
             MessageBox.Show("Selected Players:\n\n" + output);
         }
+
+
+        //checks if a given player has already been added to the selected players listbox to prevent duplicates
 
         private bool PlayerAlreadySelected(Player p)
         {
