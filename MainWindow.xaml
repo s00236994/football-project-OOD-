@@ -40,10 +40,10 @@
                         <ComboBoxItem Content="Premier League"/>
                     </ComboBox>
 
-                    <ListBox x:Name="lbxTeams" SelectionChanged="lbxTeams_SelectionChanged">
-                        <ListBoxItem Content="Leeds United"/>
-                        <ListBoxItem Content="Chelsea"/>
-                        <ListBoxItem Content="Manchester City"/>
+                    <ListBox
+                        x:Name="lbxTeams" 
+                        SelectionChanged="lbxTeams_SelectionChanged">
+                        
                     </ListBox>
 
                 </StackPanel>
@@ -58,8 +58,9 @@
                              Margin="0,0,0,10"
                              Text="Select a team to view players"/>
 
-                    <ListBox x:Name="lbxPlayers">
-                        <ListBoxItem Content="(No players loaded)"/>
+                    <ListBox
+                        x:Name="lbxPlayers">
+                      
                     </ListBox>
 
                 </StackPanel>
@@ -93,7 +94,6 @@
                                Margin="0,0,0,10"/>
 
                     <ListBox x:Name="lbxSelectedPlayers" MinHeight="80" Margin="0,0,0,10">
-                        <ListBoxItem Content="(none)"/>
                     </ListBox>
 
                     <!--Compare the selected players -->
