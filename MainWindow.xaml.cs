@@ -28,6 +28,7 @@ namespace football_project
 
             SetupTeams();
             LoadTeamsToListBox();
+
         }
 
         private void SetupTeams()
